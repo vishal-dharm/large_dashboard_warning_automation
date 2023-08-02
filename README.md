@@ -2,11 +2,13 @@
 
 ## Overview
 
-This repository contains a script which shows how to add a warning text tile to all dashboards with more than 25 queries.
+This repository contains a script which shows how to add a warning text tile to all dashboards with more than 25 queries. The script works by running a System Activity query to grab a list of all dashboards with more than 25 tiles. It then updates each dashboard and adds a warning text tile to the top of the dashboards.
 
 Warning text tile:
+
 ![image](https://github.com/vishal-dharm/large_dashboard_warning_automation/assets/61256217/a220f212-8049-48e4-9d01-cf0be371b750)
 
+Please note, you should inform your users before running this automation as it will make changes to their dashboard.
 
 ## Background
 
@@ -16,6 +18,6 @@ One of the biggest contributors to poor dashboard and, in general, Looker perfor
 
 To automate this process, you can put this script in a [Cloud Function](https://cloud.google.com/functions) and trigger it at the desired cadence with [Cloud Scheduler](https://cloud.google.com/scheduler).
 
-## Caveats
+## Caveat
 
 Before running this script on your production Looker instance, you should strongly consider adding error handling and retry logic.
