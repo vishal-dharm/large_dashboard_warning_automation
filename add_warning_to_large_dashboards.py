@@ -7,6 +7,7 @@ sdk = looker_sdk.init40()
 
 def main():
     large_dashboard_id_list = get_large_dashboard_id_list()
+
     for dashboard_id in large_dashboard_id_list:
         add_warning_text_tile(dashboard_id)
 
@@ -120,3 +121,5 @@ def add_warning_text_tile(dashboard_id: str):
                 dashboard_layout_component_id=tile.id,
                 body=new_dashboard_layout_components,
             )
+
+    print(f"Warning text tile added to dashboard ID: {dashboard_id}")
